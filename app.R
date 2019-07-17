@@ -28,7 +28,7 @@ server <- function(input, output, session) {
         filter_user_data_today() %>% 
 	    ggplot2::ggplot(data=., aes(x=hour, y=usr, color=app)) + 
             geom_point() + 
-            geom_smooth(method='loess') +
+            geom_smooth(method='loess', se=FALSE) +
             theme_bw()
     })
     
