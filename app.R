@@ -20,7 +20,8 @@ server <- function(input, output, session) {
             filter(Time == max(Time)) %>% 
             slice(1) %>% 
             ungroup %>% 
-            arrange(hour) #%>% 
+            arrange(hour) %>% 
+	    filter(app != 'shiny-server/server_status')
             #mutate(hour = datetime_to_timestamp(hour))    
     })
     
