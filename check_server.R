@@ -3,7 +3,7 @@ RData <- "sysLoad.RData"
 
 
 Dat <- tryCatch(load(RData), 
-                warning = function(c) 'warning on read of load data',
+                warning = function(c) {return(NULL)}, #'warning on read of load data',
                 error = function(c) {return(NULL)},
                 message = function(c) 'message'
                )
