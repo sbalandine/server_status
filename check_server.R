@@ -2,11 +2,11 @@ setwd("/srv/shiny-server/server_status")
 RData <- "sysLoad.RData"
 
 
-Dat <- tryCatch(load(RData), 
-                warning = function(c) {return(NULL)}, #'warning on read of load data',
-                error = function(c) {return(NULL)},
-                message = function(c) 'message'
-               )
+tryCatch(load(RData), 
+         warning = function(c) {return(NULL)}, #'warning on read of load data',
+         error = function(c) {return(NULL)},
+         message = function(c) 'message'
+         )
 
 I <- 0
 
