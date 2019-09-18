@@ -11,7 +11,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {
     
     filter_user_data_today <- reactive({
-        load('sysLoad.RData')
+        load('/srv/shiny-server/server_status/sysLoad.RData')
         
         Dat %>% 
             mutate(hour = as.POSIXct(trunc(Time, 'mins'))) %>% 

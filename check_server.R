@@ -1,12 +1,17 @@
 setwd("/srv/shiny-server/server_status")
 RData <- "sysLoad.RData"
 
-
+## try to load in R data
 tryCatch(load(RData), 
          warning = function(c) {return(NULL)}, #'warning on read of load data',
          error = function(c) {return(NULL)},
          message = function(c) 'message'
          )
+
+## if the above fails then `Dat` doesn't exist so let's set it to null
+if(!exists('Dat')){
+  Dat <- NULL
+}
 
 I <- 0
 
